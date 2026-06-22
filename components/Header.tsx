@@ -11,11 +11,11 @@ const Header = () => {
       <nav className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link href="/">
           <Image
-            width={100}
-            height={100}
-            src={"/logo.png"}
+            width={700}
+            height={700}
+            src={"/kodara_logo_bg.png"}
             alt=""
-            className="h-9 w-auto rounded-md"
+            className="h-72 mt-1 w-fit rounded-md"
           />
         </Link>
 
