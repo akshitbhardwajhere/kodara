@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <img src="/public/logo.svg" alt="Kodara Logo" width="120" style="margin-bottom: 20px; border-radius: 20%;" onerror="this.src='https://raw.githubusercontent.com/akshitbhardwajhere/kodara/main/public/logo.svg'; this.onerror=null;" />
 
-## Getting Started
+  # ⚡️ Kodara
 
-First, run the development server:
+  **Generate, preview, and iteratively improve React sandbox applications live in your browser.**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  *Powered by **DeepSeek-v4 Flash** (OpenCode Free Models) & **@cline/sdk***
+
+  <p align="center">
+    <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js" /></a>
+    <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS" /></a>
+    <a href="https://prisma.io"><img src="https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma" alt="Prisma" /></a>
+    <a href="https://clerk.com"><img src="https://img.shields.io/badge/Clerk-Auth-6C47FF?style=for-the-badge&logo=clerk" alt="Clerk" /></a>
+  </p>
+</div>
+
+---
+
+## ✨ Features
+
+- **🚀 Instant Generation**: Build fully-functional React apps (using functional components and Tailwind CSS) in seconds from a single prompt.
+- **🖥️ Live Sandpack Preview**: Run and play with your generated application in real-time inside a Sandpack browser environment.
+- **🤖 Collaborative AI Agent**: Improve your apps iteratively through the built-in AI agent powered by `@cline/sdk`. The agent writes code, patches files, and hot-reloads the changes live.
+- **🧠 Streaming Thoughts**: Watch the AI reason about your requirements in real-time with live thinking status updates and thought extraction.
+- **🔌 Zero Key Requirement**: Pre-configured with OpenCode Zen's public API gateway to query the `deepseek-v4-flash-free` model without needing personal API credentials.
+
+---
+
+## 🛠️ Architecture & Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org) (App Router, Turbopack)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
+- **Database / ORM**: [Prisma ORM](https://prisma.io) with PostgreSQL
+- **Authentication**: [Clerk Auth](https://clerk.com) (Social & Email login, Protected route middleware)
+- **AI Gateway**: [OpenCode Zen API](https://opencode.ai) utilizing `deepseek-v4-flash-free`
+- **Agent Framework**: `@cline/sdk` for live preview patching and code editing
+- **Sandbox Environment**: `@codesandbox/sandpack-react`
+
+---
+
+## 🚦 Getting Started
+
+### 📋 Prerequisites
+
+Ensure you have the following installed on your machine:
+- [Node.js](https://nodejs.org/) (v22 or higher)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
+- A running [PostgreSQL](https://www.postgresql.org/) database
+
+### 🔧 Environment Setup
+
+Create a `.env` file in the root of the project:
+
+```env
+# Clerk Authentication Configuration
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+# Database Connections
+DATABASE_URL="postgresql://user:password@localhost:5432/kodara?schema=public"
+DIRECT_URL="postgresql://user:password@localhost:5432/kodara?schema=public"
+
+# Arcjet Protection Security Config
+ARCJET_KEY=your_arcjet_key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📦 Installation & Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/akshitbhardwajhere/kodara.git
+   cd kodara
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Run Prisma Migrations**:
+   Ensure your database is running, then apply migrations to set up the schemas:
+   ```bash
+   npx prisma migrate dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Start the Development Server**:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - give your feedback. Your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js
+The project is ready for deployment on platforms like Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Compile and optimize production build
+npm run build
+
+# Start production server
+npm run start
+```
+
+*Note: For Vercel deployments, a `vercel.json` configuration file with fluid serverless functions enabled is already included in the workspace.*
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.

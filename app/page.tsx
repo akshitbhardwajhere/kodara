@@ -73,7 +73,7 @@ export default function Home() {
         />
         <Badge variant={"outline"} className="gap-2 p-4 backdrop-blur-sm">
           <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-          Powered by Gemini 3.5 Flash
+          Powered by Deepseek-v4 Flash
         </Badge>
 
         <h1 className="mx-auto max-w-3xl text-balance font-serif text-5xl leading-tight tracking-tight sm:text-5xl lg:text-7xl z-10">
